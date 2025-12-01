@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parqueadero</title>
+    <link rel="stylesheet" href="/css/cliente.css">
+
+</head>
+<body>
+    <div>
+       
+    </div>
+    <header class="header">
+
+    <!-- IZQUIERDA: Logo + Bienvenida -->
+    <section class="left-header">
+        <img src="/assets/logo1.jpeg" alt="Logo" class="logo-img">
+
+        <div class="welcome-text">
+            <h2>Bienvenido, Gabriel Quiroga</h2>
+            <p>Tu parqueadero, a un clic de distancia</p>
+        </div>
+    </section>
+
+    <!-- DERECHA: Botones -->
+    <section class="right-header">
+        <button class="btn-nav">Cliente</button>
+        <button class="btn-nav">Salir</button>
+    </section>
+
+</header>
+
+</header>
+
+
+    <main class="contenedor">
+
+        <section class="card info">
+            <h3>Mi Información</h3>
+            <p class="sub">Datos registrados en el sistema</p>
+
+            <div class="campo">
+                <span>Nombre Completo</span>
+                <p>gabriel quiroga</p>
+            </div>
+
+            <div class="campo">
+                <span>Documento</span>
+                <p>CE - 12412543</p>
+            </div>
+
+            <div class="campo">
+                <span>Tipo de Vehículo</span>
+                <p>Moto</p>
+            </div>
+        </section>
+
+        <section class="card reservas">
+            <h3>Mis Reservas</h3>
+            <p class="sub">Monitorea tus reservas de parqueadero</p>
+
+            <!-- Reserva Activa -->
+            <div class="reserva activa">
+                <div class="badge">ACTIVA</div>
+                <h4>Espacio A-15</h4>
+                <p>Zona de parqueadero</p>
+                <p>Miércoles, 19 de noviembre de 2025</p>
+                <p>09:00 - 17:00</p>
+
+                <div class="pago">
+                    <span>Total Pagado:</span> $24.000
+                    <br>
+                    <span>Método de Pago:</span> Tarjeta
+                </div>
+
+                <div class="acciones">
+                    <button class="btn azul">Modificar</button>
+                    <button class="btn rojo">Cancelar Reserva</button>
+                </div>
+            </div>
+
+            <!-- Reserva completada -->
+            <div class="reserva completada">
+                <div class="badge gris">COMPLETADA</div>
+                <h4>Espacio B-23</h4>
+                <p>Zona de parqueadero</p>
+                <p>Domingo, 9 de noviembre de 2025</p>
+                <p>14:00 - 18:00</p>
+
+                <div class="pago">
+                    <span>Total Pagado:</span> $6.000
+                    <br>
+                    <span>Método de Pago:</span> Efectivo
+                </div>
+            </div>
+
+        </section>
+
+        <section class="card nueva">
+            <h3>Nueva Reserva</h3>
+            <p class="sub">Reserva un espacio de parqueadero</p>
+
+            <label>Espacio de Parqueadero</label>
+            <select>
+                <option>Selecciona un espacio</option>
+            </select>
+
+
+             <br>
+            <label>Fecha</label>
+            <input type="date">
+
+            <div class="row">
+                <div>
+                    
+                    <label>Hora Inicio</label>
+                    <input type="time">
+                </div>
+
+                <div>
+                    <label>Hora Fin</label>
+                    <input type="time">
+                </div>
+            </div>
+
+            <button class="btn principal">Proceder al Pago</button>
+        </section>
+
+        <section class="card cupos">
+            <h3>Disponibilidad de Cupos</h3>
+            <p class="sub">Espacios disponibles hoy</p>
+
+            <div class="zona">
+                Zona A (Automóvil)
+                <span class="tag">2 disponibles</span>
+            </div>
+
+            <div class="zona">
+                Zona B (Motocicleta)
+                <span class="tag">2 disponibles</span>
+            </div>
+
+            <div class="zona">
+                Zona C (Camioneta)
+                <span class="tag">2 disponibles</span>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

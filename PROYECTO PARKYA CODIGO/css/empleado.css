@@ -1,0 +1,324 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.sub {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* =========================== */
+/* BARRA SUPERIOR */
+/* =========================== */
+
+.top-bar {
+    background: rgb(15, 34, 69);
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.search {
+    width: 280px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+}
+
+.top-info {
+    text-align: center;
+}
+
+.date {
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.time {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.user-box {
+    text-align: right;
+}
+
+.user-name {
+    font-weight: bold;
+    display: block;
+    color: #ffffff;
+}
+
+.role {
+    font-size: 13px;
+    color: #007bff;
+}
+
+/* =========================== */
+/* LAYOUT GENERAL */
+/* =========================== */
+
+.layout {
+    display: flex;
+}
+
+/* =========================== */
+/* SIDEBAR IZQUIERDO */
+/* =========================== */
+
+.sidebar {
+    width: 260px;
+    background: white;
+    padding: 20px;
+    border-right: 2px solid #e5e5e5;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.side-user {
+    text-align: center;
+}
+
+.side-logo {
+    width: 100px;      /* puedes ajustar tamaño */
+    height: auto;      /* mantiene proporción real */
+    border-radius: 0;  /* SIN bordes redondeados */
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 13px;
+}
+
+.blue {
+    background: #007bff;
+}
+.green {
+    background: #2ecc71;
+}
+.red {
+    background: #e74c3c;
+}
+.gray {
+    background: #7f8c8d;
+}
+
+.estado {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.estado .titulo {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bar-bg {
+    background: #ddd;
+    height: 8px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.bar-fill {
+    height: 8px;
+    background: #007bff;
+    border-radius: 5px;
+}
+
+.ocupacion {
+    font-size: 14px;
+    color: #444;
+}
+
+/* MENÚ LATERAL */
+
+.menu {
+    margin-top: 25px;
+}
+
+.menu .item {
+    display: block;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu .active,
+.menu .item:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* =========================== */
+/* CONTENIDO PRINCIPAL */
+/* =========================== */
+
+.contenido {
+    padding: 35px;
+    width: 100%;
+}
+
+/* TARJETAS PRINCIPALES */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #007bff;
+    box-shadow: 0px 2px 6px #ddd;
+}
+
+.card.green { border-left-color: #2ecc71; }
+.card.red { border-left-color: #e74c3c; }
+.card.blue { border-left-color: #007bff; }
+
+.card h2 {
+    margin: 10px 0 5px;
+    font-size: 32px;
+}
+
+.card .titulo {
+    font-size: 14px;
+    color: #555;
+}
+
+/* =========================== */
+/* MAPA + ACTIVIDAD */
+/* =========================== */
+
+.flex {
+    display: flex;
+    gap: 20px;
+}
+
+.mapa {
+    width: 65%;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px #ddd;
+    margin-top: 12px;   /* <-- ESTA ES LA NUEVA LÍNEA */
+}
+
+.legend span {
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-right: 5px;
+    font-size: 12px;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 30px 0 20px;   /* <-- ESTA LÍNEA es la que te da más espacio */
+}
+
+.slot {
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.slot.green { background: #2ecc71; }
+.slot.red { background: #e74c3c; }
+.slot.blue { background: #3498db; }
+.slot.gray { background: #7f8c8d; }
+
+/* =========================== */
+/* ACTIVIDAD RECIENTE */
+/* =========================== */
+
+.actividad ul {
+    list-style: none;
+    padding: 0;
+}
+
+.actividad li {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: white;
+}
+
+.actividad .green { background: #2ecc71; }
+.actividad .red { background: #e74c3c; }
+.actividad .blue { background: #3498db; }
+
+/* =========================== */
+/* TABLA VEHÍCULOS ACTIVOS */
+/* =========================== */
+
+.tabla {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.estado.active {
+    background: #2ecc71;
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+.salida {
+    padding: 8px 12px;
+    background: #e74c3c;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.salida:hover {
+    background: #c0392b;
+}

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARKYA Dashboard</title>
+
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script>
+        function actualizarHora() {
+            const ahora = new Date();
+            const horas = String(ahora.getHours()).padStart(2, "0");
+            const minutos = String(ahora.getMinutes()).padStart(2, "0");
+            const segundos = String(ahora.getSeconds()).padStart(2, "0");
+            document.getElementById("reloj").textContent = `${horas}:${minutos}:${segundos}`;
+        }
+
+        setInterval(actualizarHora, 1000);
+        actualizarHora();
+    </script>
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="/assets/logo1.jpeg" alt="Logo" class="logo-img">
+        </div>
+
+        <div class="user-info">
+            <h3>Carlos Rodríguez</h3>
+            <span class="role">Administrador</span>
+        </div>
+
+        <div class="state-box">
+            <p><span class="dot"></span> Disponible</p>
+            <p class="label">Ocupación</p>
+            <div class="progress">
+                <div class="progress-bar" style="width: 28%"></div>
+            </div>
+            <small>28%</small>
+        </div>
+
+        <nav class="menu">
+            <a href="#" class="active"><i class="fa-solid fa-table-columns"></i> Dashboard</a>
+            <a href="#"><i class="fa-solid fa-car"></i> Vehículos</a>
+            <a href="#"><i class="fa-regular fa-calendar"></i> Reservas</a>
+            <a href="#"><i class="fa-regular fa-user"></i> Clientes</a>
+            <a href="#"><i class="fa-solid fa-users"></i> Empleados</a>
+            <a href="#"><i class="fa-solid fa-chart-line"></i> Reportes</a>
+            <a href="#"><i class="fa-solid fa-tags"></i> Tarifas</a>
+            <a href="#"><i class="fa-solid fa-gear"></i> Configuración</a>
+        </nav>
+
+        <footer class="footer">
+            PARKYA © 2025
+        </footer>
+    </aside>
+
+    <!-- ========== MAIN ========== -->
+    <main class="main">
+
+        <!-- ===== TOP BAR ===== -->
+        <header class="topbar">
+            <input type="text" placeholder="Buscar placa…" class="search">
+
+            
+    <div id="fecha"></div>
+
+    <script>
+        function actualizarFecha(){
+            const hoy = new Date();
+
+            // formato día/mes/año con hora
+            const fecha = hoy.toLocaleDateString("es-ES", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+            });
+
+            const hora = hoy.toLocaleTimeString("es-ES");
+
+            // Muestra fecha y hora
+            document.getElementById("fecha").innerHTML = `${fecha} - ${hora}`;
+        }
+
+        actualizarFecha();           // la muestra al entrar
+        setInterval(actualizarFecha, 1000); // se actualiza sola cada segundo
+    </script>
+            <div class="top-actions">
+                <i class="fa-regular fa-circle-question icon"></i>
+                <div class="notif">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+
+                <div class="profile">
+                    <div class="circle">CR</div>
+                    <div>
+                        <p class="name">Carlos Rodríguez</p>
+                        <p class="role">Administrador</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== TITULO ===== -->
+        <section class="title">
+            <h2>Dashboard de Administrador</h2>
+            <p>Panel de control completo del sistema PARKYA</p>
+        </section>
+
+        <!-- ===== TARJETAS ===== -->
+        <section class="cards">
+
+            <div class="card">
+                <p class="title">Espacios Totales</p>
+                <h1>18</h1>
+                <p class="sub">espacios</p>
+            </div>
+
+            <div class="card">
+                <p class="title">Disponibles</p>
+                <h1 style="color:#1da749;">9</h1>
+                <p class="sub">espacios</p>
+            </div>
+
+            <div class="card">
+                <p class="title">Ocupados</p>
+                <h1 style="color:#d12626;">5</h1>
+                <p class="sub">espacios</p>
+            </div>
+
+            <div class="card">
+                <p class="title">Vehículos Dentro</p>
+                <h1>5</h1>
+                <p class="sub">activos</p>
+            </div>
+
+            <div class="card large">
+                <p class="title">Ingresos del Día</p>
+                <h1>$245.000</h1>
+                <p class="sub">COP</p>
+            </div>
+
+            <div class="card">
+                <p class="title">Reservas</p>
+                <h1>3</h1>
+                <p class="sub">activas</p>
+            </div>
+
+            <div class="card">
+                <p class="title">Tiempo Promedio</p>
+                <h1>2h 30m</h1>
+                <p class="sub">de estancia</p>
+            </div>
+
+            <div class="card">
+                <p class="title">Empleados Activos</p>
+                <h1>8</h1>
+                <p class="sub">trabajando hoy</p>
+            </div>
+
+            <div class="card">
+                <p class="title">Total Semanal</p>
+                <h1>$1595K</h1>
+                <p class="green">+12% vs semana anterior</p>
+            </div>
+
+            <div class="card">
+                <p class="title">Rotación Diaria</p>
+                <h1>42</h1>
+                <p class="sub">vehículos procesados</p>
+            </div>
+        </section>
+
+        <!-- ===== GRÁFICO ===== -->
+        <section class="graph">
+            <p class="title">Ingresos Semanales</p>
+            <canvas id="chart"></canvas>
+        </section>
+
+        <!-- ===== MAPA DEL PARQUEADERO ===== -->
+        <section class="graph">
+            <p class="title">Mapa del Parqueadero</p>
+
+
+            <div class="leyenda">
+    <div class="leyenda-item">
+        <span class="cuadro libre"></span>
+        <span class="leyenda-text">Disponible</span>
+    </div>
+    <div class="leyenda-item">
+        <span class="cuadro ocupado"></span>
+        <span class="leyenda-text">Ocupado</span>
+    </div>
+    <div class="leyenda-item">
+        <span class="cuadro reservado"></span>
+        <span class="leyenda-text">Reservado</span>
+    </div>
+    <div class="leyenda-item">
+        <span class="cuadro mantenimiento"></span>
+        <span class="leyenda-text">Mantenimiento</span>
+    </div>
+</div>
+
+  <div class="zona">
+    <h3 class="titulo-zona">Zona A</h3>
+
+    <div class="grid-parking">
+        <div class="slot ocupado">A1</div>
+        <div class="slot libre">A2</div>
+        <div class="slot reservado">A3</div>
+        <div class="slot libre">A4</div>
+        <div class="slot mantenimiento">A5</div>
+        <div class="slot ocupado">A6</div>
+    </div>
+</div>
+
+
+<div class="zona">
+    <h3 class="titulo-zona">Zona B</h3>
+
+    <div class="grid-parking">
+        <div class="slot libre">B1</div>
+        <div class="slot ocupado">B2</div>
+        <div class="slot libre">B3</div>
+        <div class="slot reservado">B4</div>
+        <div class="slot libre">B5</div>
+        <div class="slot libre">B6</div>
+    </div>
+</div>
+
+
+<div class="zona">
+    <h3 class="titulo-zona">Zona C</h3>
+
+    <div class="grid-parking">
+        <div class="slot libre">C1</div>
+        <div class="slot ocupado">C2</div>
+        <div class="slot libre">C3</div>
+        <div class="slot libre">C4</div>
+        <div class="slot ocupado">C5</div>
+        <div class="slot libre">C6</div>
+    </div>
+</div>
+<section class="graph double-graph">
+
+    <!-- === DEMANDA POR HORA === -->
+    <div class="card-graph">
+        <p class="title">Demanda por Hora</p>
+        <canvas id="demandaHora"></canvas>
+    </div>
+
+    <!-- === DISTRIBUCIÓN POR TIPO DE VEHÍCULO === -->
+    <div class="card-graph">
+        <p class="title">Distribución por Tipo de Vehículo</p>
+        <canvas id="tipoVehiculo"></canvas>
+    </div>
+
+</section>
+
+
+<!-- === ACTIVIDAD RECIENTE === -->
+<div class="card card-full actividad-reciente">
+    <h3>Actividad Reciente</h3>
+
+    <ul class="actividad-lista">
+        <li>
+            <span class="estado estado-verde"></span>
+            Vehículo ABC123 ingresó al parqueadero — 10:25 AM
+        </li>
+        <li>
+            <span class="estado estado-rojo"></span>
+            Vehículo TYU890 salió del parqueadero — 10:20 AM
+        </li>
+        <li>
+            <span class="estado estado-azul"></span>
+            Reserva para placa KLM456 confirmada — 9:50 AM
+        </li>
+        <li>
+            <span class="estado estado-gris"></span>
+            Mantenimiento programado — Zona B — 9:35 AM
+        </li>
+    </ul>
+</div>
+
+<!-- === VEHÍCULOS ACTIVOS === -->
+<div class="card card-full vehiculos-activos">
+    <h3>Vehículos Activos</h3>
+
+    <ul class="vehiculos-lista" id="vehiculosActivos">
+
+    <li data-placa="ABC123" data-entrada="2025-11-27T10:25:00" data-tipo="Automóvil" data-espacio="A1">
+        <div class="col placa">ABC123</div>
+        <div class="col tipo">Automóvil</div>
+        <div class="col duracion" data-entrada="2025-11-27T10:25:00">--</div>
+        <div class="col espacio">A1</div>
+        <div class="col propietario">Juan Pérez</div>
+        <div class="col accion">
+            <button class="btn-salida">Salida</button>
+        </div>
+    </li>
+
+    <li data-placa="TYU890" data-entrada="2025-11-27T10:10:00" data-tipo="Camioneta" data-espacio="A3">
+        <div class="col placa">TYU890</div>
+        <div class="col tipo">Camioneta</div>
+        <div class="col duracion" data-entrada="2025-11-27T10:10:00">--</div>
+        <div class="col espacio">A3</div>
+        <div class="col propietario">María Gómez</div>
+        <div class="col accion">
+            <button class="btn-salida">Salida</button>
+        </div>
+    </li>
+
+    <li data-placa="KLM456" data-entrada="2025-11-27T09:50:00" data-tipo="Motocicleta" data-espacio="B4">
+        <div class="col placa">KLM456</div>
+        <div class="col tipo">Motocicleta</div>
+        <div class="col duracion" data-entrada="2025-11-27T09:50:00">--</div>
+        <div class="col espacio">B4</div>
+        <div class="col propietario">Ana Martínez</div>
+        <div class="col accion">
+            <button class="btn-salida">Salida</button>
+        </div>
+    </li>
+
+    <li data-placa="WXY777" data-entrada="2025-11-27T08:40:00" data-tipo="Automóvil" data-espacio="C1">
+        <div class="col placa">WXY777</div>
+        <div class="col tipo">Automóvil</div>
+        <div class="col duracion" data-entrada="2025-11-27T08:40:00">--</div>
+        <div class="col espacio">C1</div>
+        <div class="col propietario">Luis Fernández</div>
+        <div class="col accion">
+            <button class="btn-salida">Salida</button>
+        </div>
+    </li>
+
+</ul>
+</div>
+
+</section> <!-- ESTE SÍ VA AQUÍ -->
+</main>     <!-- Y ESTE TAMBIÉN -->
+        
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('chart').getContext('2d');
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
+        datasets: [{
+            label: 'Ingresos (COP)',
+            data: [170000, 230000, 190000, 245000, 280000, 310000, 160000],
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59, 130, 246, 0.15)',
+            tension: 0.35,
+            borderWidth: 3,
+            pointBackgroundColor: '#3b82f6',
+            pointRadius: 5
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                beginAtZero: false,
+                ticks: { color: '#555' }
+            },
+            x: {
+                ticks: { color: '#555' }
+            }
+        },
+        plugins: {
+            legend: {
+                labels: { color: '#333' }
+            }
+        }
+    }
+});
+</script>
+
+<script>
+// ================== DEMANDA POR HORA (BARRAS) ==================
+const ctxHora = document.getElementById('demandaHora').getContext('2d');
+
+new Chart(ctxHora, {
+    type: 'bar',
+    data: {
+        labels: ["6 AM","7 AM","8 AM","9 AM","10 AM","11 AM","12 PM","1 PM","2 PM","3 PM","4 PM","5 PM","6 PM"],
+        datasets: [{
+            label: "Vehículos por hora",
+            data: [3, 5, 9, 12, 15, 18, 20, 17, 14, 10, 8, 6, 4],
+            backgroundColor: "#3b82f6",
+            borderRadius: 8
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+
+// ================== DISTRIBUCIÓN TIPO DE VEHÍCULO ==================
+const ctxTipo = document.getElementById('tipoVehiculo').getContext('2d');
+
+new Chart(ctxTipo, {
+    type: 'doughnut',
+    data: {
+        labels: ["Automóviles", "Motocicletas", "Camionetas", "Otros"],
+        datasets: [{
+            data: [45, 30, 15, 10],
+            backgroundColor: [
+                "#3b82f6",  // Azul - Automóviles
+                "#22c55e",  // Verde brillante - Motos
+                "#facc15",  // Amarillo - Camionetas
+                "#9ca3af"   // Gris - Otros
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+</script>
+
+
+
+</script>
+
+<script>
+/* ===== Duraciones automáticas y manejo de "Salida" ===== */
+
+function calcDuration(entradaISO) {
+    const entrada = new Date(entradaISO);
+    const ahora = new Date();
+    let diff = Math.floor((ahora - entrada) / 1000); // segundos
+
+    const dias = Math.floor(diff / 86400);
+    diff -= dias * 86400;
+    const horas = Math.floor(diff / 3600);
+    diff -= horas * 3600;
+    const minutos = Math.floor(diff / 60);
+
+    if (dias > 0) return `${dias}d ${horas}h ${minutos}m`;
+    if (horas > 0) return `${horas}h ${minutos}m`;
+    return `${minutos}m`;
+}
+
+/* Actualiza todas las duraciones visibles */
+function actualizarDuraciones() {
+    document.querySelectorAll('.vehiculos-lista .duracion').forEach(elem => {
+        const entrada = elem.getAttribute('data-entrada');
+        if (entrada) elem.textContent = calcDuration(entrada);
+    });
+}
+
+/* Manejo del botón Salida */
+function manejarSalida(event) {
+    if (!event.target.classList.contains('btn-salida')) return;
+    const li = event.target.closest('li');
+    if (!li) return;
+
+    const placa = li.dataset.placa;
+    const espacio = li.dataset.espacio;
+    const ahora = new Date();
+    const horaSalida = ahora.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    // 1) agregar registro a Actividad Reciente (si existe)
+    const actividadLista = document.querySelector('.actividad-lista');
+    if (actividadLista) {
+        const liAct = document.createElement('li');
+        liAct.innerHTML = `<span class="estado estado-verde"></span> Vehículo ${placa} salió del parqueadero — ${horaSalida}`;
+        actividadLista.prepend(liAct);
+    }
+    // 2) animación de salida (fade) y eliminación
+    li.style.transition = 'opacity 300ms ease, transform 300ms ease';
+    li.style.opacity = '0';
+    li.style.transform = 'translateX(20px)';
+    setTimeout(() => li.remove(), 320);
+}
+
+/* Attach events */
+document.addEventListener('DOMContentLoaded', () => {
+    // 1) duración inicial y actualización periódica
+    actualizarDuraciones();
+    setInterval(actualizarDuraciones, 30000); // cada 30s
+
+    // 2) delegación boton salida
+    const lista = document.getElementById('vehiculosActivos');
+    if (lista) lista.addEventListener('click', manejarSalida);
+});
+</script>
+
+</body>
+</html>

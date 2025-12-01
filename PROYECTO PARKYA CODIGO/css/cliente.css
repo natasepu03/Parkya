@@ -1,0 +1,167 @@
+body {
+    background: #f0f5ff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.header {
+    background: #000f2e;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    
+}
+
+/* Contenedor del logo + texto PARKYA */
+.left-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* separa el logo del texto */
+}
+
+.logo-img {
+    height: 45px;
+}
+
+/* PARKYA */
+.brand {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.left-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.welcome-text h2 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+    color: white;
+}
+
+.welcome-text p {
+    font-size: 14px;
+    margin: 0;
+    color: #82aaff; /* azul suave como tu interfaz */
+}
+/* Botones derecha */
+.right-header {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-nav {
+    background: #0039ff;
+    color: white;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #d9d9d9;
+}
+
+.sub {
+    color: #888;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.campo span {
+    color: #666;
+    font-size: 14px;
+}
+
+.campo p {
+    font-weight: bold;
+}
+
+.reserva {
+    border: 1px solid #dbe4ff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: #4088ff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.badge.gris {
+    background: #9d9d9d;
+}
+
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn.azul {
+    background: #005bff;
+    color: white;
+}
+
+.btn.rojo {
+    background: #ff2d2d;
+    color: white;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.principal {
+    background-color: #0044ff;
+    color: white;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Cupos */
+.zona {
+    background: #eef2ff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.tag {
+    background: #5a7bff;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}

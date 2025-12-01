@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Empleado</title>
+    <link rel="stylesheet" href="/css/empleado.css">
+
+
+    <script>
+function actualizarHora() {
+    const ahora = new Date();
+    const horas = String(ahora.getHours()).padStart(2, "0");
+    const minutos = String(ahora.getMinutes()).padStart(2, "0");
+    const segundos = String(ahora.getSeconds()).padStart(2, "0");
+
+    document.getElementById("reloj").textContent = `${horas}:${minutos}:${segundos}`;
+}
+
+setInterval(actualizarHora, 1000);
+actualizarHora();
+
+
+
+    function actualizarFecha(){
+        const hoy = new Date();
+
+        // 📅 FORMATO: Lunes, 1 de diciembre de 2025
+        const fecha = hoy.toLocaleDateString("es-ES", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+
+        document.getElementById("fecha").innerText = fecha;
+    }
+
+    actualizarFecha();
+    setInterval(actualizarFecha, 60000); // se actualiza cada 1 minuto
+</script>
+
+</head>
+<body>
+
+    <!-- ENCABEZADO SUPERIOR -->
+    <header class="top-bar">
+        <input type="text" class="search" placeholder="Buscar placa, espacio, cliente...">
+
+        <div id="fecha"></div>
+
+
+        <div class="user-box">
+            <span class="user-name">María González</span>
+            <span class="role">Empleado</span>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="layout">
+
+        <!-- MENÚ IZQUIERDO -->
+        <aside class="sidebar">
+            <div class="side-user">
+                <img src="/assets/logo1.jpeg" class="side-logo">
+                <h3>María González</h3>
+                <span class="badge blue">Empleado</span>
+            </div>
+
+            <div class="estado">
+                <p class="titulo">Estado del Parqueadero</p>
+                <p class="green">● Disponible</p>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 28%;"></div>
+                </div>
+                <p class="ocupacion">Ocupación: 28%</p>
+            </div>
+
+            <nav class="menu">
+                <a class="item active">Dashboard</a>
+                <a class="item">Vehículos</a>
+                <a class="item">Reservas</a>
+                <a class="item">Historial</a>
+            </nav>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="contenido">
+
+            <h1>Dashboard de Empleado</h1>
+            <p class="sub">Bienvenido al sistema de gestión PARKYA</p>
+
+            <!-- TARJETAS -->
+            <section class="cards">
+                <div class="card">
+                    <span class="titulo">Espacios Totales</span>
+                    <h2>18</h2>
+                    <p>espacios</p>
+                </div>
+
+                <div class="card green">
+                    <span class="titulo">Disponibles</span>
+                    <h2>9</h2>
+                    <p>espacios</p>
+                </div>
+
+                <div class="card red">
+                    <span class="titulo">Ocupados</span>
+                    <h2>5</h2>
+                    <p>espacios</p>
+                </div>
+
+                <div class="card blue">
+                    <span class="titulo">Vehículos Dentro</span>
+                    <h2>5</h2>
+                    <p>activos</p>
+                </div>
+
+                <div class="card">
+                    <span class="titulo">Ingresos del Día</span>
+                    <h2>$245.000</h2>
+                    <p>COP</p>
+                </div>
+
+                <div class="card">
+                    <span class="titulo">Reservas</span>
+                    <h2>3</h2>
+                    <p>activas</p>
+                </div>
+            </section>
+
+            <!-- MAPA + ACTIVIDAD -->
+            <section class="flex">
+
+                <div class="mapa">
+                    <h2>Mapa del Parqueadero</h2>
+
+                     <br>
+                    <div class="legend">
+                        <span class="green">Disponible</span>
+                        <span class="red">Ocupado</span>
+                        <span class="blue">Reservado</span>
+                        <span class="gray">Mantenimiento</span>
+                    </div>
+
+                    <!-- ZONA A -->
+                     <br><br>
+                    <h3>Zona A</h3>
+                    
+                    <div class="grid">
+                        <div class="slot red">A-01</div>
+                        <div class="slot green">A-02</div>
+                        <div class="slot blue">A-03</div>
+                        <div class="slot green">A-04</div>
+                        <div class="slot red">A-05</div>
+                        <div class="slot green">A-06</div>
+                        <div class="slot green">A-07</div>
+                        <div class="slot red">A-08</div>
+                    </div>
+
+                    <!-- ZONA B -->
+                    <h3>Zona B</h3>
+                    <div class="grid">
+                        <div class="slot red">B-01</div>
+                        <div class="slot red">B-02</div>
+                        <div class="slot green">B-03</div>
+                        <div class="slot blue">B-04</div>
+                        <div class="slot blue">B-05</div>
+                        <div class="slot gray">B-06</div>
+                    </div>
+
+                    <!-- ZONA C -->
+                    <h3>Zona C</h3>
+                    <div class="grid">
+                        <div class="slot red">C-01</div>
+                        <div class="slot green">C-02</div>
+                        <div class="slot green">C-03</div>
+                        <div class="slot blue">C-04</div>
+                    </div>
+                </div>
+
+                <!-- ACTIVIDAD RECIENTE -->
+                <div class="actividad">
+                    <h2>Actividad Reciente</h2>
+
+                    <ul>
+                        <li class="green">Vehículo ABC123 ingresó a A-01</li>
+                        <li class="red">Vehículo XYZ789 salió de B-12</li>
+                        <li class="blue">Nueva reserva para C-04</li>
+                        <li class="green">Vehículo DEF456 ingresó a A-05</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- VEHÍCULOS ACTIVOS -->
+            <section class="tabla">
+                <h2>Vehículos Activos</h2>
+
+                <table>
+                    <tr>
+                        <th>Placa</th>
+                        <th>Tipo</th>
+                        <th>Hora Entrada</th>
+                        <th>Duración</th>
+                        <th>Espacio</th>
+                        <th>Estado</th>
+                        <th>Propietario</th>
+                        <th>Acción</th>
+                    </tr>
+
+                    <tr>
+                        <td>ABC123</td>
+                        <td>Automóvil</td>
+                        <td>13:27</td>
+                        <td>2h 0m</td>
+                        <td>A-01</td>
+                        <td><span class="estado active">Activo</span></td>
+                        <td>Juan Pérez</td>
+                        <td><button class="salida">Salida</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>DEF456</td>
+                        <td>Automóvil</td>
+                        <td>14:27</td>
+                        <td>1h 0m</td>
+                        <td>A-05</td>
+                        <td><span class="estado active">Activo</span></td>
+                        <td>María González</td>
+                        <td><button class="salida">Salida</button></td>
+                    </tr>
+
+                </table>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
